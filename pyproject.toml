@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "satquery-ai"
+version = "0.1.0"
+description = "SatQuery AI: an agentic vision-language assistant for multimodal remote-sensing image analysis"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+]
+dependencies = [
+    "streamlit>=1.36",
+    "Pillow>=10.0",
+    "numpy>=1.26",
+    "rasterio>=1.3",
+    "tifffile>=2024.5.10",
+    "matplotlib>=3.8",
+    "pydantic>=2.6",
+    "fpdf2>=2.7",
+    "google-genai>=0.3",
+    "psutil>=5.9",
+    "pymongo>=4.8",
+    "python-dotenv>=1.0",
+    "opencv-python-headless>=4.9",
+    "scikit-image>=0.22",
+    "scipy>=1.12",
+]
+
+[project.optional-dependencies]
+train = [
+    "torch>=2.2",
+    "transformers>=4.42",
+    "accelerate",
+    "peft",
+    "deepspeed",
+    "open_clip_torch",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/your-org/satquery-ai"
+"Bug Tracker" = "https://github.com/your-org/satquery-ai/issues"
+
+[tool.setuptools.packages.find]
+exclude = ["assets*", "benchmark*", "docs", "dist*", "playground*", "scripts*", "tests*", "demo_images*"]
